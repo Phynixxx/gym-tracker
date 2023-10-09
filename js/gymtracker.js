@@ -119,3 +119,6 @@ function hoverGlow() {
 
 // startup Functions
 cloneElements();
+
+
+console.log("hi");
