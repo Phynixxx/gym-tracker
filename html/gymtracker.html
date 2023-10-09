@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GYM Tracker</title>
+    <link href="../css/gymtracker.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="interface">
+      <div class="header">
+        <img src="../img/Logo.png" alt="Logo" class="logo">
+        <div class="greetings">
+          <h5>Hey Sydney</h5>
+        </div>
+        <button type="button" class="startbutton">WORKOUT STARTEN</button>
+      </div>
+      <div class="body">
+
+        <div class="timer">
+          <div class="timerHeadline" >TIMER: </div> <p id="timer">00:00:00</p>
+        </div>
+        <div class="glow-on-hover exercise" onclick="hoverGlow()">
+          <input class="exercisename" type="text" placeholder="Welche Übung willst du machen?"></input>
+          <div class="grid-container">
+            <div class="set-table-header">
+              <div class="grid-item">Satz</div>
+              <div class="grid-item">Gewicht in KG</div>
+              <div class="grid-item">Wiederholungen</div>
+            </div>
+            <div class="set">
+              <div class="grid-item set-amount">1</div>
+              <div class="grid-item set-weight"><input class="weight" type="number" min="0"  placeholder="0"></input></div>
+              <div class="grid-item set-reps"><input class="reps" type="number" min="0"  placeholder="0"></input></div>
+            </div>
+          </div>
+          <div class="grid-container-two">
+            <div class="grid-item add-btn"><button onclick="addNewSet()" type="button" class="moresets">+</button></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+          </div>
+        </div>
+        
+      </div>
+      <button onclick="addNewExersice()" type="button" class="moreexercises">+ WEITERE ÜBUNGEN</button>
+    </div>
+
+    <div class="popupbackground hidden">
+      <div class="popup">
+        <div class="image-container">
+          <img src="../img/istockphoto-1169422269-170667a.jpg" alt="Muscle Flex">
+        </div>
+        <div class="stats">Du hast heute insgesamt<br> KG<br>bewegt</div>
+        <button type="button" class="finish">FERTIG</button>
+      </div>
+    </div>
+
+    <script src="../js/gymtracker.js"></script>
+  </body>
+</html>

@@ -1,0 +1,296 @@
+body {
+    margin: 0;
+}
+
+.interface {
+    min-width: 350px;
+    min-height: 850px;
+    background-color: #1E1E1E;
+}
+
+.header {
+    height: 55px;
+    background-color: #3C1E3E;
+    padding: 0px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    justify-self: left;
+}
+
+h5, h4 {
+    color: white;
+    font-size: 13px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+
+.startbutton {
+    padding: 10px 20px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    font-size: 12px;
+    color: white;
+    background-color: #3C1E3E;
+    border-color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.body {
+    text-align:center;
+}
+
+.timer {
+    height: 50px;
+    margin-bottom: 12px;
+    margin-top: 8px;
+    color: white;
+    font-size: 13px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    background-color: #111;
+    padding: 0px 10px 10px ;
+    display: inline-block;
+    border-radius: 15px;
+}
+
+.timerHeadline {
+    margin: 5px 0px 5px 0px;
+    padding-top: 5px;;
+    display: block;
+}
+
+#timer {
+    font-size: 18px;
+    font-family: monospace;
+    color: #fff;
+    margin: 5px;
+}
+
+.glow-on-hover {
+    height: auto;
+    margin: 0px 15px 15px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: #111;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+.exercisename {
+    background-color: rgb(49, 49, 49);
+    border-radius: 10px 10px 0px 0px;
+    border: 0;
+    width: 85.7%;
+    height: 40px;
+    text-align: left;
+    padding-left: 14%;
+    color: #fff;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    margin: 15px 10px 10px 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.set, .set-table-header, .grid-container-two {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-container-two {
+    margin-left: 10px;
+}
+
+.weight, .reps {
+    background-color: rgb(49, 49, 49);
+    color: #fff;
+    border: 0;
+    border-radius: 3px;
+    width: 50%;
+    height: 30px;
+    text-align: center;
+}
+
+.moresets {
+    padding: 2px 4px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border-color: white;
+    background-color: #1E1E1E;
+    font-size: 10px;
+    color: white;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+
+
+/*------------------------ hovereffekt Anfang ------------------------*/
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(90deg, #ff0000, #ff7300, #fffb00, #48ff00, #ff0000, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:hover:before, .glow-on-hover.active:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+} 
+
+/*------------------------ hovereffekt Ende ------------------------*/
+
+.moreexercises {
+    transform-origin: 0;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border-color: white;
+    background-color: #1E1E1E;
+    font-size: 12px;
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: all .25s;
+    cursor: pointer;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+  
+.moreexercises:hover {
+    transform: scale(0.95)translateX(-50%);
+}
+
+/*--------------------------- PopUp -----------------------------*/
+
+.popupbackground {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(23, 20, 20, 0.621);
+    display: block;
+    justify-content: center;
+
+}
+
+.popup {
+    z-index: 2;
+    background-color: rgb(49, 49, 49);
+    width: 350px;
+    height: 350px;
+    border-radius: 15px;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 65px;
+}
+
+.image-container {
+    width: 300px;
+    height: 150px;
+    margin: 30px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.stats {
+    color: #fff;
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+.finish {
+    padding: 10px 70px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    font-size: 12px;
+    color: white;
+    background-color: #3C1E3E;
+    border: white solid 1px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+/*------------------------ Media Queries ------------------------*/
+
+@media screen and (min-width: 1200px) {
+    .interface {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 450px;
+        height: 100%;
+    }
+
+    body {
+        background-color: #1E1E1E;
+    }
+
+    .popup {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
