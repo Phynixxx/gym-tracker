@@ -94,8 +94,11 @@ function calculateWeight() {
     for (let i = 0; i < allSets.length; i++) {
         let weight = allSets[i].querySelector(".weight").value;
         let reps = allSets[i].querySelector(".reps").value;
-        totalWeight = totalWeight + parseInt(weight) * parseInt(reps);
-        console.log(weight, reps, totalWeight);
+
+        if (parseInt(weight) * parseInt(reps) > 0) {
+            totalWeight = totalWeight + parseInt(weight) * parseInt(reps);
+        }
+
     }
     
     document.querySelector(".stats").innerHTML = "Du hast in<br>" + 
@@ -114,6 +117,17 @@ function hoverGlow() {
     }
 
     that.classList.add("active");
+}
+
+function deleteSet() {
+    let that = window.event.target;
+    let exercise = that.closest(".exercise");
+    that.closest(".set").remove();
+    let allSets = exercise.querySelectorAll(".set");
+
+    for (let i = 0; i < allSets.length; i++) {
+        allSets[i].querySelector(".set-amount").innerHTML = (i + 1);
+    }
 }
 
 
