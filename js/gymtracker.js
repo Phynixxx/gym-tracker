@@ -1,4 +1,6 @@
 // Initializing variables
+let welcomePopupBtn = document.querySelector(".enter-btn")
+let closeWelcomePopup = document.querySelector(".ask-for-name-background")
 let startWorkoutBtn = document.querySelector(".startbutton");
 let workoutIsRunning = false;
 let popupButton = document.querySelector(".finish");
@@ -26,6 +28,24 @@ popupButton.addEventListener("click", function() {
     togglePopup();
 });
 
+
+function showName() {
+    let nameInput = document.querySelector(".your-name");
+    let nameOutput = document.querySelector(".greetings");
+    let callNameNode = document.querySelector(".call-name-note");
+    let name = nameInput.value;
+
+    if (name) {
+        nameOutput.innerHTML = "Hi " + name + "!";
+        toggleWelcomePopup()
+    } else {
+        callNameNode.innerHTML = "Bitte gib einen Namen ein";
+    }
+}
+
+function toggleWelcomePopup() {
+    closeWelcomePopup.classList.toggle("hidden");
+}
 
 function cloneElements() {
     let setNode = document.querySelector(".set");
