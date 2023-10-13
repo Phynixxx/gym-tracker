@@ -156,6 +156,9 @@ function deleteSet() {
     }
 }
 
+
+// indextDB
+
 //localStorage.clear();
 
 function getUsername() {
@@ -176,5 +179,5 @@ function getUsername() {
 cloneElements();
 getUsername();
 
-// indextDB
+
 
