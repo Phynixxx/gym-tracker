@@ -114,13 +114,14 @@ h5, h4, p, .greetings {
 }
 
 .exercisename {
+    display: block;
     background-color: rgb(49, 49, 49);
     border-radius: 10px 10px 0px 0px;
     border: 0;
-    width: 85.7%;
+    width: calc(100% - 47px);
+    padding-left: 45px;
     height: 40px;
     text-align: left;
-    padding-left: 14%;
     color: #fff;
 }
 
