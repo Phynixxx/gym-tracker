@@ -48,6 +48,10 @@ h5, h4, p, .greetings {
     letter-spacing: 1px;
 }
 
+.greetings:hover {
+    cursor: pointer;
+}
+
 .startbutton {
     padding: 10px 20px;
     font-family: sans-serif;

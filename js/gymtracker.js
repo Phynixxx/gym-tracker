@@ -1,6 +1,7 @@
 // Initializing variables
-let welcomePopupBtn = document.querySelector(".enter-btn")
-let closeWelcomePopup = document.querySelector(".ask-for-name-background")
+let welcomePopupBtn = document.querySelector(".enter-btn");
+let closeWelcomePopup = document.querySelector(".ask-for-name-background");
+let nameOutput = document.querySelector(".greetings");
 let startWorkoutBtn = document.querySelector(".startbutton");
 let workoutIsRunning = false;
 let popupButton = document.querySelector(".finish");
@@ -28,16 +29,21 @@ popupButton.addEventListener("click", function() {
     togglePopup();
 });
 
+nameOutput.addEventListener("click", function() {
+    toggleWelcomePopup();
+});
 
+// Functions
 function showName() {
-    let nameInput = document.querySelector(".your-name");
-    let nameOutput = document.querySelector(".greetings");
     let callNameNode = document.querySelector(".call-name-note");
-    let name = nameInput.value;
+    let name = localStorage.getItem("username");
 
     if (name) {
         nameOutput.innerHTML = "Hi " + name + "!";
-        toggleWelcomePopup()
+
+        if (!closeWelcomePopup.classList.contains("hidden")) {
+            toggleWelcomePopup();
+        }
     } else {
         callNameNode.innerHTML = "Bitte gib einen Namen ein";
     }
@@ -150,9 +156,25 @@ function deleteSet() {
     }
 }
 
+//localStorage.clear();
+
+function getUsername() {
+
+    if (localStorage.getItem("username") !== null) {
+        showName();
+    } else {
+        toggleWelcomePopup();
+    }
+    
+    document.querySelector(".enter-btn").addEventListener("click", function () {
+        localStorage.setItem("username", document.querySelector(".your-name").value);
+        showName();
+    });
+}
 
 // startup Functions
 cloneElements();
+getUsername();
 
+// indextDB
 
-console.log("hi");
