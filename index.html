@@ -37,7 +37,7 @@
         <div class="timer">
           <div class="timerHeadline" >TIMER: </div> <p id="timer">00:00:00</p>
         </div>
-        <div class="glow-on-hover exercise" onclick="hoverGlow()">
+        <div class="glow-on-hover exercise" data-id="0" onclick="hoverGlow()">
           <input class="exercisename" type="text" placeholder="Welche Übung willst du machen?"></input>
           <div class="grid-container">
             <div class="set-table-header">
@@ -47,7 +47,9 @@
             </div>
             <div class="set">
               <div class="grid-item set-amount">1</div>
-              <div class="grid-item set-weight"><input class="weight" type="number" min="0"  placeholder="0"></input></div>
+              <div class="grid-item set-weight">
+                <input class="weight" type="number" min="0"  placeholder="0"></input>
+              </div>
               <div class="grid-item set-reps">
                 <input class="reps" type="number" min="0"  placeholder="0"></input>
                 <button onclick="deleteSet()" type="button" class="delete-set">x</button>
