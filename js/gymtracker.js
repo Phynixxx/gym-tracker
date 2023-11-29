@@ -36,6 +36,11 @@ nameOutput.addEventListener("click", function() {
     toggleWelcomePopup();
 });
 
+function reset() {
+    localStorage.clear();
+    window.location.reload(true);
+}
+
 function initExersiceEvents() {
     let allExersices = document.querySelectorAll(".exercise");
 
