@@ -12,6 +12,8 @@
     <link rel="manifest" href="./img/favicon_io/site.webmanifest">
   </head>
 
+  
+
   <body>
     <div class="ask-for-name-background hidden">
       <div class="ask-for-name">
@@ -21,24 +23,30 @@
         <input class="your-name" type="text" placeholder="Dein Vorname"><br>
         <div class="call-name-note"></div>
         <button class="enter-btn">WEITER</button>
-    </div>
+      </div>
     </div>
 
     <div class="interface">
-      <div class="header">
-        <img src="./img/Logo.png" alt="Logo" class="logo">
-        <div class="greetings">
-          <h5>Welcome</h5>
+
+      <div class="full-header">
+        <div class="header">
+          <img src="./img/Logo.png" alt="Logo" class="logo">
+          <div class="greetings">
+            <h5>Welcome</h5>
+          </div>
+          <button type="button" class="startbutton">WORKOUT STARTEN</button>
         </div>
-        <button type="button" class="startbutton">WORKOUT STARTEN</button>
+
+        <div class="lower-header">
+          <button onclick="reset()" type="button" class="reset-btn">Alles löschen</button>
+          <div class="timer">
+            <div class="timerHeadline" >TIMER: </div> <p id="timer">00:00:00</p>
+          </div>
+        </div>
       </div>
+    
       <div class="body">
-
-        <button onclick="reset()" type="button" class="reset-btn">Alles löschen</button>
-
-        <div class="timer">
-          <div class="timerHeadline" >TIMER: </div> <p id="timer">00:00:00</p>
-        </div>
+        
         <div class="glow-on-hover exercise" data-id="0" onclick="hoverGlow()">
           <input class="exercisename" type="text" placeholder="Welche Übung willst du machen?"></input>
           <div class="grid-container">
@@ -58,6 +66,7 @@
               </div>
             </div>
           </div>
+
           <div class="grid-container-two">
             <div class="grid-item add-btn"><button onclick="addNewSet()" type="button" class="moresets">+</button></div>
             <div class="grid-item"></div>

@@ -322,7 +322,3 @@ function initAppData() {
       };
       saveAppData();
 }
-
-
-
-

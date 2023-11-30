@@ -70,12 +70,31 @@ h5, h4, p, .greetings {
 
 .body {
     text-align:center;
+
+}
+
+.lower-header {
+    margin: 0px 10px 10px;
+    display: flex;
+}
+
+.reset-btn {
+    padding: 7px 10px;
+    font-family: sans-serif;
+    letter-spacing: 1.2px;
+    font-size: 12px;
+    color: #e10e0e;
+    background-color: #1E1E1E;
+    border: #e10e0e solid 2px;
+    border-radius: 8px;
+    cursor: pointer;
+    flex: 1;
+    margin: auto;
 }
 
 .timer {
     height: 50px;
-    margin-bottom: 12px;
-    margin-top: 8px;
+    margin: 5px 10px 0px;
     color: white;
     font-size: 13px;
     font-family: sans-serif;
@@ -84,6 +103,8 @@ h5, h4, p, .greetings {
     padding: 0px 10px 10px ;
     display: inline-block;
     border-radius: 15px;
+    text-align: center;
+    flex: 1;
 }
 
 .timerHeadline {
